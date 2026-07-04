@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from app.schemas.movie_candidates import MovieCandidates
+from typing import Optional
 
 
 class ChatCreate(BaseModel):
@@ -14,4 +15,4 @@ class ChatCreate(BaseModel):
 class ChatResponse(BaseModel):
     username: str
     ai_message: str
-    recommended_movies: MovieCandidates
+    recommended_movies: Optional[MovieCandidates] = None
