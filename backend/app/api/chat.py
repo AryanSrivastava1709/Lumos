@@ -28,6 +28,8 @@ async def chat_endpoint(chat_request: ChatCreate):
         }
     )
 
+    response: ChatResponse = result["recommended_movies"]
+
     # Store user message
     await conversation_repository.append_message(
         chat_request.username,
@@ -38,16 +40,19 @@ async def chat_endpoint(chat_request: ChatCreate):
     )
 
     # Store assistant response
+    recommended_titles = (
+        [movie.title for movie in response.recommended_movies.movies]
+        if response.recommended_movies is not None
+        else []
+    )
+
     await conversation_repository.append_message(
         chat_request.username,
         Message(
             role="assistant",
-            content=result["recommended_movies"].ai_message,
-            recommended_titles=[
-                movie.title
-                for movie in result["recommended_movies"].recommended_movies.movies
-            ],
+            content=response.ai_message,
+            recommended_titles=recommended_titles,
         ),
     )
 
-    return result["recommended_movies"]
+    return response
