@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
-
+from fastapi.middleware.cors import CORSMiddleware
 from app.api import health
 from app.api import user
 from app.api import chat
@@ -40,3 +40,10 @@ app = FastAPI(
 app.include_router(health.router)
 app.include_router(user.router)
 app.include_router(chat.router)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
