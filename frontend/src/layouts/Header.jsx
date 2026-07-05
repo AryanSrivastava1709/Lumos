@@ -147,6 +147,7 @@ function Header() {
               <div className="rounded-3xl border border-white/5 bg-white/8 backdrop-blur-3xl p-3 shadow-[0_0_40px_rgba(99,102,241,0.12)]">
                 {[
                   { name: "Home", path: "/" },
+                  { name: "Chat", path: "/chat" },
                   { name: "About", path: "/about" },
                   { name: "Profile", path: "/profile" },
                 ].map((item) => (
