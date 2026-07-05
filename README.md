@@ -206,19 +206,21 @@ Frontend UI
 
 # 📸 Screenshots
 
-```md
-## Home
+## 🏠 Home
 
 ![Home](screenshots/home.png)
 
-## Chat
+---
+
+## 💬 Chat
 
 ![Chat](screenshots/chat.png)
 
-## Recommendations
+---
+
+## 🎬 Recommendations
 
 ![Recommendations](screenshots/recommendations.png)
-```
 
 ---
 
