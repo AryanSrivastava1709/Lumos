@@ -6,6 +6,9 @@ import Chat from "./pages/Chat";
 import Profile from "./pages/Profile";
 import BackgroundOverlay from "./layouts/BackgroundOverlay";
 import { useState } from "react";
+import WhatsNext from "./pages/WhatsNext";
+import NotFound from "./pages/NotFound";
+import Footer from "./layouts/Footer";
 
 function App() {
   const [username, setUsername] = useState(() => {
@@ -18,12 +21,15 @@ function App() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#050506]">
       <BackgroundOverlay />
+
       <Header />
 
-      <main className="relative z-10">
+      <main className="relative z-10 pb-24">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/whats-next" element={<WhatsNext />} />
+          <Route path="*" element={<NotFound />} />
 
           <Route
             path="/chat"
@@ -48,6 +54,8 @@ function App() {
           />
         </Routes>
       </main>
+
+      <Footer />
     </div>
   );
 }

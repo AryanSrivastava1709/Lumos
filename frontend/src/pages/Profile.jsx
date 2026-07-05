@@ -42,6 +42,9 @@ function Profile({ username, setUsername, setStatus }) {
 
     localStorage.removeItem("username");
     localStorage.removeItem("status");
+    localStorage.removeItem("movieQuery");
+    localStorage.removeItem("aiMessage");
+    localStorage.removeItem("movies");
 
     navigate("/");
   };
