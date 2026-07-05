@@ -98,7 +98,7 @@ function RecommendedMovies({ movies }) {
         Recommended Movies
       </motion.h3>
 
-      <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+      <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-4">
         {movies.map((movie) => (
           <motion.div key={movie.id} variants={cardVariants}>
             <MovieCard movie={movie} />
